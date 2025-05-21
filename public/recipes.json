@@ -1,0 +1,210 @@
+[
+  {
+    "id": 1,
+    "name": "Spaghetti Carbonara",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRFKBp3cXvs42U00WfpQoZZc6wZZ-q3VJut9NaX-mTktfeC8FICH1tFlKDRGuzl",
+    "cuisine": "Italian",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta",
+      "2 eggs",
+      "50g Parmesan cheese",
+      "2 cloves garlic",
+      "Salt",
+      "Black pepper"
+    ],
+    "how_to_cook": [
+      "1. Boil spaghetti in salted water until al dente, then drain.",
+      "2. Fry pancetta and garlic in a pan with a little oil until crispy.",
+      "3. Beat eggs in a bowl and mix with grated Parmesan cheese.",
+      "4. Add the drained spaghetti to the pancetta and remove from heat.",
+      "5. Quickly pour the egg mixture over the spaghetti and toss to coat.",
+      "6. Season with salt and black pepper, then serve immediately."
+    ],
+    "prep_time": "10 minutes",
+    "cook_time": "15 minutes",
+    "servings": 2,
+    "category": "Pasta"
+  },
+  {
+    "id": 2,
+    "name": "Chicken Curry",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRcNZR9zRLtPAjqpS7J_HiiVqq1BGBOEfX-vFX2M9PXl6L2vsRchFjhmWz7TtmI",
+    "cuisine": "Indian",
+    "ingredients": [
+      "500g chicken breast",
+      "1 onion",
+      "2 tomatoes",
+      "3 garlic cloves",
+      "1 tbsp curry powder",
+      "200ml coconut milk",
+      "Salt",
+      "Oil"
+    ],
+    "how_to_cook": [
+      "1. Chop onion, garlic, and tomatoes.",
+      "2. Heat oil in a pan, sauté onions and garlic until soft.",
+      "3. Add chicken pieces and cook until browned.",
+      "4. Add chopped tomatoes and curry powder, then cook for 5 minutes.",
+      "5. Pour in coconut milk and simmer on low heat for 20 minutes.",
+      "6. Season with salt to taste, then serve with rice."
+    ],
+    "prep_time": "15 minutes",
+    "cook_time": "30 minutes",
+    "servings": 4,
+    "category": "Curry"
+  },
+  {
+    "id": 3,
+    "name": "Vegetable Stir Fry",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcThgevyVrL_NxdVFdZGV7kWV2bQ0cZqEhmBuV3ObklT0IOAJVu26iEfAjo-cawU",
+    "cuisine": "Asian",
+    "ingredients": [
+      "1 bell pepper",
+      "1 carrot",
+      "100g broccoli",
+      "2 tbsp soy sauce",
+      "1 tbsp sesame oil",
+      "1 tsp ginger",
+      "1 garlic clove"
+    ],
+    "how_to_cook": [
+      "1. Chop vegetables into bite-sized pieces.",
+      "2. Heat sesame oil in a pan over medium heat.",
+      "3. Add garlic and grated ginger, sauté for 1 minute.",
+      "4. Add the vegetables and stir-fry for 5–7 minutes until tender-crisp.",
+      "5. Pour in soy sauce and cook for another 2 minutes.",
+      "6. Serve hot with rice or noodles."
+    ],
+    "prep_time": "10 minutes",
+    "cook_time": "10 minutes",
+    "servings": 2,
+    "category": "Vegetarian"
+  },
+  {
+    "id": 4,
+    "name": "Beef Tacos",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT7zkEUbQ1qdbW3Mg5J2eNZ8lEhwcVV-ux-UhR6z3Ljof3ATsdU5cRZxLuO4J8c",
+    "cuisine": "Mexican",
+    "ingredients": [
+      "300g ground beef",
+      "6 taco shells",
+      "1 onion",
+      "1 tomato",
+      "Lettuce",
+      "Grated cheese",
+      "Taco seasoning"
+    ],
+    "how_to_cook": [
+      "1. Brown the ground beef in a skillet over medium heat.",
+      "2. Add chopped onion and taco seasoning, cook for another 5 minutes.",
+      "3. While the beef cooks, chop lettuce and tomato.",
+      "4. Fill each taco shell with the cooked beef mixture.",
+      "5. Top with lettuce, tomato, and grated cheese.",
+      "6. Serve immediately with your favorite salsa or toppings."
+    ],
+    "prep_time": "15 minutes",
+    "cook_time": "10 minutes",
+    "servings": 3,
+    "category": "Mexican"
+  },
+  {
+    "id": 5,
+    "name": "Pancakes",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRum26YDJf3BDPlosOGBf0wKuTksnl-kmgEOO7C_96EkowuypgLkQaQ_uCOLk8w",
+    "cuisine": "American",
+    "ingredients": [
+      "1 cup flour",
+      "1 egg",
+      "1 cup milk",
+      "2 tbsp sugar",
+      "1 tsp baking powder",
+      "Butter"
+    ],
+    "how_to_cook": [
+      "1. In a bowl, mix the flour, sugar, and baking powder.",
+      "2. Whisk in the milk and egg until smooth.",
+      "3. Heat a little butter in a non-stick pan over medium heat.",
+      "4. Pour the batter into the pan, cooking each pancake until bubbles form on top.",
+      "5. Flip the pancake and cook until golden brown on both sides.",
+      "6. Serve with syrup, fruits, or any topping you prefer."
+    ],
+    "prep_time": "5 minutes",
+    "cook_time": "10 minutes",
+    "servings": 2,
+    "category": "Breakfast"
+  },
+  {
+    "id": 6,
+    "name": "Caesar Salad",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQaCOMzTvvhysmmvadLkwzi6TPH_XUeuUMZ9XF3TDW7Uv_MNF292P3CvpLZDI3R",
+    "cuisine": "American",
+    "ingredients": [
+      "1 romaine lettuce",
+      "Croutons",
+      "Parmesan cheese",
+      "Caesar dressing",
+      "1 chicken breast (optional)"
+    ],
+    "how_to_cook": [
+      "1. Chop the romaine lettuce and place it in a large salad bowl.",
+      "2. If using chicken, grill or pan-fry until cooked through, then slice it.",
+      "3. Toss the lettuce with croutons and Parmesan cheese.",
+      "4. Drizzle Caesar dressing over the top and toss again.",
+      "5. Top with the grilled chicken slices (if using) and serve immediately."
+    ],
+    "prep_time": "10 minutes",
+    "cook_time": "10 minutes",
+    "servings": 2,
+    "category": "Salad"
+  },
+  {
+    "id": 7,
+    "name": "Tomato Soup",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS8aQEBUhRo9PBlXz3EDmOrueSMDMnHnVQGyosG5BYA_qvhgyiiev66dVJus7ca",
+    "cuisine": "American",
+    "ingredients": [
+      "4 tomatoes",
+      "1 onion",
+      "2 garlic cloves",
+      "1 cup vegetable broth",
+      "Salt",
+      "Pepper",
+      "Cream (optional)"
+    ],
+    "how_to_cook": [
+      "1. Chop the tomatoes, onion, and garlic.",
+      "2. Heat oil in a pot and sauté the onion and garlic until soft.",
+      "3. Add the chopped tomatoes and vegetable broth, and bring to a boil.",
+      "4. Lower the heat and simmer for 20 minutes.",
+      "5. Blend the soup until smooth, then return it to the heat.",
+      "6. Add cream if desired and season with salt and pepper to taste."
+    ],
+    "prep_time": "10 minutes",
+    "cook_time": "25 minutes",
+    "servings": 3,
+    "category": "Soup"
+  },
+  {
+    "id": 8,
+    "name": "Banana Smoothie",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ-F3aexH3_P13yTJvxn0lx_8YTTA3DZ_zUG6lH6Bz5Aoh52mZKqtknYwj4pcT",
+    "cuisine": "Beverage",
+    "ingredients": [
+      "2 bananas",
+      "1 cup milk",
+      "1 tbsp honey",
+      "Ice cubes"
+    ],
+    "how_to_cook": [
+      "1. Peel and slice the bananas.",
+      "2. Combine the bananas, milk, honey, and ice cubes in a blender.",
+      "3. Blend until smooth and creamy.",
+      "4. Pour into glasses and serve immediately."
+    ],
+    "prep_time": "5 minutes",
+    "cook_time": "0 minutes",
+    "servings": 2,
+    "category": "Beverage"
+  }
+]
