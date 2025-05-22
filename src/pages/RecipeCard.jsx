@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2';
 
-const RecipeCard = ({ recipe }) => {
-   const [recipes, setRecipes] = useState(recipe);
+const RecipeCard = ({ recipe, Recipes, setRecipe }) => {
+  //  const [recipes, setRecipes] = useState(recipe);
 
   const {
     _id,
@@ -47,8 +47,8 @@ const RecipeCard = ({ recipe }) => {
                 icon: "success"
               });
 
-              const remainingRecipes = recipes.filter(rec => rec._id !== _id);
-              setRecipes(remainingRecipes)
+              const remainingRecipes = Recipes.filter(rec => rec._id !== _id);
+              setRecipe(remainingRecipes)
             }
           })
       }

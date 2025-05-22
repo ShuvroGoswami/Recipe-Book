@@ -6,6 +6,9 @@ import AddRecipes from "./AddRecipes";
 import MyRecipes from "./MyRecipes";
 import AllRecipe from "./AllRecipe";
 import UpdateRecipe from "./UpdateRecipe";
+import log from "./Login";
+import Login from "./Login";
+import Register from "./Register";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +45,15 @@ const router = createBrowserRouter([
           path: 'updateRecipe/:id',
           loader: ({params}) => fetch(`http://localhost:3000/recipes/${params.id}`),
           Component: UpdateRecipe,
-        }
+        },
+        {
+                path: '/login',
+                Component: Login,
+              },
+              {
+                path: "/register",
+                Component: Register,
+              },
     ]
   },
 ]);
