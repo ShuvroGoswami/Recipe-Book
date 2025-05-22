@@ -22,7 +22,8 @@ const Header = () => {
         {link}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <img className="w-13 rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTubPpRvW0NICM48NPMzoXLMWaHve3ymTU25Q&s" alt="" />
+    <a className=" ml-2 font-bold text-orange-200 text-xl">Recipe Book</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
