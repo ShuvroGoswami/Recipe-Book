@@ -1,60 +1,150 @@
-import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
+// import { useState } from 'react';
+// import { useLoaderData } from 'react-router';
+
+// const [likes, setLikes] = useState(recipe.likeCount || 0);
+// const [liked, setLiked] = useState(false); // Track if user has liked
+
+// const RecipeDetails = () => {
+//     const recipe = useLoaderData();
+//     // Destructure recipe fields
+//      const {
+//          title,
+//          Cuisine,
+//          Image,
+//          Ingredients,
+//          Preparation,
+//          Instructions,
+//          categories
+//      } = recipe;
+
+//      // State to keep track of likes
+//     const [likes, setLikes] = useState(0);
+
+//     // Handler to increment likes
+//     // const handleLike = () => {
+//     //     setLikes(likes + 1);
+//     // };
+//     const handleLike = async () => {
+//     const endpoint = liked
+//         ? `/recipes/${recipe._id}/unlike`
+//         : `/recipes/${recipe._id}/like`;
+
+//     try {
+//         const res = await fetch(`http://localhost:3000${endpoint}`, {
+//             method: 'PATCH',
+//             headers: { 'Content-Type': 'application/json' },
+//         });
+
+//         if (res.ok) {
+//             setLikes(prev => liked ? prev - 1 : prev + 1);
+//             setLiked(!liked);
+//         }
+//     } catch (error) {
+//         console.error('Error updating like:', error);
+//     }
+// };
+
+
+    
+
+//     return (
+//         <div className="max-w-3xl mx-auto p-6  rounded shadow">
+//            <h1 className="text-3xl font-bold mb-4">{title}</h1>
+//            <img className="w-full h-80 object-cover rounded mb-4" src={Image} alt="" />
+//             <p><strong>Cuisine:</strong> {Cuisine}</p>
+//             <p><strong>Category:</strong> {categories}</p>
+//             <p><strong>Preparation Time:</strong> {Preparation} mins</p>
+//             <div className="my-4">
+//                  <strong>Ingredients:</strong>
+//                  <ul className="list-disc list-inside mt-2">
+//                      {Ingredients?.split('",').map((item, index) => (
+//                         <li key={index}>{item.replace(/["\[\]]/g, '').trim()}</li>
+//                     ))}
+//                 </ul>
+//             </div>
+//             <div className="my-4">
+//                  <strong>Instructions:</strong>
+//                  <p>{Instructions}</p>
+//              </div>
+
+//              <div className="mt-6 flex items-center gap-4">
+//                 <button
+//                     onClick={handleLike}
+//                     className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+//                 >
+//                     👍 Like
+//                 </button>
+//                 <span className="text-lg">{likes} {likes === 1 ? 'Like' : 'Likes'}</span>
+//             </div>
+           
+//         </div>
+//     );
+// };
+
+// export default RecipeDetails;
+
+import { useState, useEffect } from 'react';
+import { useLoaderData } from 'react-router';
 
 const RecipeDetails = () => {
-    const data = useLoaderData();
-    const {id} = useParams();
-    const singleData = data.find((recipe) => recipe.id == id)
-    const { name,image,cuisine, ingredients, prep_time,how_to_cook} = singleData;
-    console.log(singleData);
+    const recipe = useLoaderData();
+    const [likes, setLikes] = useState(recipe.likeCount || 0); // Initial like count from loader data
+    // const [liked, setLiked] = useState(false); // Track if user has liked the post
+
+    // Handle like button click
+    const handleLike = async () => {
+    try {
+      const res = await fetch(`http://localhost:3000/recipes/${recipe._id}/like`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setLikes(data.likeCount);  // Update like count from backend response
+      } else {
+        console.error('Failed to update like count');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
     return (
-        <div className="min-h-screen bg-gradient-to-b from-orange-50 to-red-100 px-6 py-10">
-            <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
-                {/* Top Section with Image and Info */}
-                <div className="flex flex-col lg:flex-row">
-                    <div className="lg:w-1/2">
-                        <img src={image} alt={name} className="h-full w-full object-cover" />
-                    </div>
-                    <div className="lg:w-1/2 p-8 flex flex-col justify-center">
-                        <h1 className="text-4xl font-extrabold text-gray-800 mb-2">{name}</h1>
-                        <p className="text-lg text-gray-600 mb-1">🍽️ Cuisine: <span className="font-semibold">{cuisine}</span></p>
-                        <p className="text-lg text-gray-600 mb-1">⏱️ Prep Time: <span className="font-semibold">{prep_time}</span></p>
-                        <div className="mt-4 bg-orange-100 text-orange-800 text-sm font-medium px-4 py-2 rounded-lg inline-block w-fit">
-                            Featured Recipe
-                        </div>
-                    </div>
-                </div>
-
-                {/* Ingredients Section */}
-                <div className="p-8 border-t border-orange-200 bg-orange-50">
-                    <h2 className="text-2xl font-bold text-orange-700 mb-4">📝 Ingredients</h2>
-                    <ul className="list-disc list-inside space-y-2 text-gray-800">
-                        {ingredients?.map((item, index) => (
-                            <li key={index} className="text-md">{item}</li>
-                        ))}
-                    </ul>
-                </div>
-
-                {/* How to Cook Section */}
-                <div className="p-8 border-t border-gray-200 bg-white">
-                    <h2 className="text-2xl font-bold text-red-600 mb-4">👨‍🍳 How to Cook</h2>
-                    <p className="text-gray-700 leading-relaxed whitespace-pre-line text-md">
-                        {how_to_cook}
-                    </p>
-                </div>
+        <div className="max-w-3xl mx-auto p-6 rounded shadow">
+            <h1 className="text-3xl font-bold mb-4">{recipe.title}</h1>
+            <img className="w-full h-80 object-cover rounded mb-4" src={recipe.Image} alt="" />
+            <p><strong>Cuisine:</strong> {recipe.Cuisine}</p>
+            <p><strong>Category:</strong> {recipe.categories}</p>
+            <p><strong>Preparation Time:</strong> {recipe.Preparation} mins</p>
+            
+            <div className="my-4">
+                <strong>Ingredients:</strong>
+                <ul className="list-disc list-inside mt-2">
+                    {recipe.Ingredients?.split('",').map((item, index) => (
+                        <li key={index}>{item.replace(/["\[\]]/g, '').trim()}</li>
+                    ))}
+                </ul>
             </div>
 
-            {/* Back Button */}
-            <div className="text-center mt-10">
-                <a
-                    href="/"
-                    className="inline-block px-6 py-2 bg-gray-600 text-white font-semibold rounded-lg shadow hover:bg-gray-900 transition duration-300"
-                >
-                    ⬅ Back to All Recipes
-                </a>
+            <div className="my-4">
+                <strong>Instructions:</strong>
+                <p>{recipe.Instructions}</p>
             </div>
+
+            <div className="mt-6 flex items-center gap-4">
+        <button
+          onClick={handleLike}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+        >
+          👍 Like
+        </button>
+        <span className="text-lg">{likes} {likes === 1 ? 'Like' : 'Likes'}</span>
+      </div>
         </div>
     );
 };
 
 export default RecipeDetails;
+

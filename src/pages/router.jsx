@@ -5,6 +5,7 @@ import RecipeDetails from "./RecipeDetails";
 import AddRecipes from "./AddRecipes";
 import MyRecipes from "./MyRecipes";
 import AllRecipe from "./AllRecipe";
+import UpdateRecipe from "./UpdateRecipe";
 
 const router = createBrowserRouter([
   {
@@ -19,12 +20,13 @@ const router = createBrowserRouter([
             Component: Home,
         },
         {
-            path:'/recipesDetails/:id',
-            loader:()=>fetch('/recipes.json'),
+            path:'recipesDetails/:id',
+            loader:({params})=>fetch(`http://localhost:3000/recipes/${params.id}`),
             Component: RecipeDetails,
         },
         {
           path: '/allrecipe',
+           loader:()=> fetch('http://localhost:3000/recipes'),
           Component: AllRecipe,
         },
         {
@@ -35,6 +37,11 @@ const router = createBrowserRouter([
           path: '/myrecipes',
           loader:()=> fetch('http://localhost:3000/recipes'),
           Component: MyRecipes
+        },
+        {
+          path: 'updateRecipe/:id',
+          loader: ({params}) => fetch(`http://localhost:3000/recipes/${params.id}`),
+          Component: UpdateRecipe,
         }
     ]
   },
