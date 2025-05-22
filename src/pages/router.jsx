@@ -1,12 +1,10 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router";
+import { createBrowserRouter } from "react-router";
 import HomeLayout from "../layout/HomeLayout";
-import Home from "./pages/Home";
-import RecipeDetails from "./pages/RecipeDetails";
-import AddRecipes from "./pages/AddRecipes";
-import MyRecipes from "./pages/MyRecipes";
+import Home from "./Home";
+import RecipeDetails from "./RecipeDetails";
+import AddRecipes from "./AddRecipes";
+import MyRecipes from "./MyRecipes";
+import AllRecipe from "./AllRecipe";
 
 const router = createBrowserRouter([
   {
@@ -17,19 +15,25 @@ const router = createBrowserRouter([
         {
             index: true,
             path: '/',
-            loader:()=>fetch('/recipes.json'),
+            loader:()=> fetch('http://localhost:3000/recipes'),
             Component: Home,
         },
         {
             path:'/recipesDetails/:id',
             loader:()=>fetch('/recipes.json'),
             Component: RecipeDetails,
-        },{
+        },
+        {
+          path: '/allrecipe',
+          Component: AllRecipe,
+        },
+        {
           path: '/addrecipes',
           Component: AddRecipes
         },
         {
           path: '/myrecipes',
+          loader:()=> fetch('http://localhost:3000/recipes'),
           Component: MyRecipes
         }
     ]

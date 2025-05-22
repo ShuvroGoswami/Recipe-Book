@@ -4,8 +4,10 @@ import { NavLink } from 'react-router';
 const Header = () => {
   const link = <>
     <NavLink to="/"  className='mr-3 '>Home</NavLink>
+    <NavLink to='/allrecipe' className='mr-3 '>AllRecipe</NavLink>
         <NavLink to="/addrecipes" className='mr-3 '>AddRecipes</NavLink>
         <NavLink to="/myrecipes" className='mr-3 '>MyRecipes</NavLink>
+
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
