@@ -2,3 +2,19 @@ a.active{
 text-decoration: underline;
 color:deepskyblue
 }
+
+:root[data-theme='light'] {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+:root[data-theme='dark'] {
+  --bg-color: #1f2937;
+  --text-color: #f9fafb;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}

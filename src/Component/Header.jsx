@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { use, useContext } from 'react';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../provider/AuthProvider';
+import { ThemeContext } from '../provider/ThemeContext';
 
 const Header = () => {
+    const { theme, toggleTheme } = useContext(ThemeContext);
+  const  {user, logOut} = use(AuthContext)
+  // const handleLogout =()=>{
+  //   logOut()
+  //   .then(() => {
+  //     alert("you logged out successfully")
+  //   }).catch((error) => {
+      
+  //     console.log(error);
+  //   }); 
+  // }
   const link = <>
     <NavLink to="/"  className='mr-3 '>Home</NavLink>
     <NavLink to='/allrecipe' className='mr-3 '>AllRecipe</NavLink>
@@ -31,13 +44,31 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end space-x-3">
-    <Link to='/register'>
+    {/* <Link to='/register'>
     <button className="btn">Register</button>
     </Link>
     <Link to='/login'>
     <button className="btn">Login</button>
-    </Link>
+                    <button onClick={handleLogout} className='btn ml-3 '>LogOut</button>
+                    <Link to='/profile'><CgProfile className='btn w-15'></CgProfile></Link>
+    </Link> */}
+
+     {
+            user ? (<> <Link to='/profile'>profile</Link>
+                            
+            </>) : (<><Link to='login' className="btn mr-3 ">Login</Link>
+              <Link to="/register" className="btn  ">Register</Link></>)
+          }
+
+
   </div>
+      <button
+      onClick={toggleTheme}
+      className="p-2 border rounded btn ml-3"
+    >
+      {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+    </button>
+
 </div>
     );
 };
