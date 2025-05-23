@@ -11,7 +11,7 @@ const Hero = () => {
       
       {/* Left: Image */}
       <Fade direction="left" triggerOnce>
-        <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+        <div className="w-full  md:w-1/2 flex justify-center mb-8 lg:ml-30 md:mb-0">
           <img
             src="https://cdn.pixabay.com/photo/2014/12/21/23/28/recipe-575434_1280.png"
             alt="Recipe Book"
@@ -22,7 +22,7 @@ const Hero = () => {
 
       {/* Right: Text & Buttons */}
       <Fade direction="right" triggerOnce>
-        <div className="w-full md:w-1/2 text-center md:text-left">
+        <div className="w-full md:w-1/2 text-center md:text-left ml-50">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Share & Discover Recipes With{' '}
             <span className="text-orange-500">

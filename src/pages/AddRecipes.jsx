@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { use } from 'react';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../provider/AuthProvider';
 
 const AddRecipes = () => {
+  const  {user} = use(AuthContext)
 
     const handleAddRecipe = e =>{
         e.preventDefault();
@@ -16,7 +18,7 @@ const AddRecipes = () => {
             headers: {
                 'content-type':'application/json'
             },
-            body:JSON.stringify(NewRecipes)
+            body:JSON.stringify({...NewRecipes, email:user.email})
         })
         .then(res => res.json())
         .then(data =>{
@@ -86,7 +88,7 @@ const AddRecipes = () => {
     </fieldset>
 
     {/* Categories Checkboxes */}
-    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4 md:col-span-2">
+    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4 ">
       <label className="label">Categories</label>
       <div className="flex flex-wrap gap-4">
         {['Breakfast', 'Lunch', 'Dinner', 'Dessert', 'Vegan'].map((category) => (
