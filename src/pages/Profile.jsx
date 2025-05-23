@@ -1,15 +1,17 @@
 import React, { use } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
-import { Navigate } from 'react-router';
+import { Navigate, useNavigate } from 'react-router';
 // import { Helmet } from 'react-helmet';
 
 const Profile = () => {
     const  {user, logOut} = use(AuthContext)
     console.log(user);
+    const navigate = useNavigate();
     const handleLogout =()=>{
     logOut()
     .then(() => {
     //   alert("you logged out successfully")
+     navigate(-1);
        
     }).catch((error) => {
       
@@ -24,16 +26,16 @@ const Profile = () => {
             <div className=''>
             <div className="avatar">
   <div className="ring-primary ring-offset-base-100 w-44 rounded-full ring-2 ring-offset-2 mb-5">
-    {/* <img src={user.photoURL} /> */}
+    <img src={user?.photoURL} />
   </div>
 </div>
-            {/* <img className='w-50 h-50 rounded-full' src={user.photoURL} alt="" /> */}
-            {/* <p className='text-2xl font-bold text-center text-white'>{user.displayName}</p> */}
-            {/* <p className='text-xl font-bold text-center text-white'>{ user.email}</p> */}
+            {/* <img className='w-50 h-50 rounded-full' src={user?.photoURL} alt="" /> */}
+            <p className='text-2xl font-bold text-center text-white'>{user?.displayName}</p>
+            <p className='text-xl font-bold text-center text-white'>{ user?.email}</p>
             </div>
 
             
-            <button onClick={handleLogout} className='btn ml-3 '>LogOut</button>
+            <button onClick={handleLogout} className='btn ml-3 mt-7'>LogOut</button>
             
         </div>
     );

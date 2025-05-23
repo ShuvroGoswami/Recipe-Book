@@ -1,23 +1,4 @@
-// import React from 'react';
-// import { useLoaderData } from 'react-router';
-// import AllRecipeCard from './AllRecipeCard';
 
-// const AllRecipe = () => {
-
-//   const recipes = useLoaderData()
-
-//   return (
-//     <div>
-//       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-10'>
-//                 {
-//                     recipes.map(recipe => <AllRecipeCard key={recipe._id} recipe={recipe}></AllRecipeCard>)
-//                 }
-//             </div>
-//     </div>
-//   );
-// };
-
-// export default AllRecipe;
 
 import React, { useState, useMemo } from 'react';
 import { useLoaderData } from 'react-router';
@@ -43,12 +24,12 @@ const AllRecipe = () => {
     <div className='p-10'>
       {/* Cuisine Filter Dropdown */}
       <div className='mb-5'>
-        <label htmlFor="cuisine" className='mr-2 text-white font-semibold'>Filter by Cuisine:</label>
+        <label htmlFor="cuisine" className='mr-2  font-semibold'>Filter by Cuisine:</label>
         <select
           id="cuisine"
           value={selectedCuisine}
           onChange={e => setSelectedCuisine(e.target.value)}
-          className='p-2 rounded bg-white text-black'
+          className='p-2 rounded border-1'
         >
           {cuisineTypes.map(cuisine => (
             <option key={cuisine} value={cuisine}>
