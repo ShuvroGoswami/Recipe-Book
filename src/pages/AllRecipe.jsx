@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import { useLoaderData } from 'react-router';
 import AllRecipeCard from './AllRecipeCard';
+import { Helmet } from 'react-helmet-async';
 
 const AllRecipe = () => {
   const recipes = useLoaderData();
@@ -22,6 +23,9 @@ const AllRecipe = () => {
 
   return (
     <div className='p-10'>
+      <Helmet>
+        <title>All-recipes</title>
+      </Helmet>
       {/* Cuisine Filter Dropdown */}
       <div className='mb-5'>
         <label htmlFor="cuisine" className='mr-2  font-semibold'>Filter by Cuisine:</label>
@@ -29,7 +33,7 @@ const AllRecipe = () => {
           id="cuisine"
           value={selectedCuisine}
           onChange={e => setSelectedCuisine(e.target.value)}
-          className='p-2 rounded border-1'
+          className='p-2 rounded border-1 bg-white text-black'
         >
           {cuisineTypes.map(cuisine => (
             <option key={cuisine} value={cuisine}>

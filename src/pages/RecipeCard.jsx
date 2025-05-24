@@ -32,7 +32,7 @@ const RecipeCard = ({ recipe, Recipes, setRecipe }) => {
       if (result.isConfirmed) {
 
         // connect to mongo
-        fetch(`http://localhost:3000/recipes/${_id}`, {
+        fetch(`https://b11a10-server-side-shuvro-goswami.vercel.app/recipes/${_id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

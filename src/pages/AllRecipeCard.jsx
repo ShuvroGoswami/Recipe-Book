@@ -3,6 +3,7 @@
 import React, { use } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const AllRecipeCard = ({ recipe }) => {
     const  {user} = use(AuthContext)
@@ -10,6 +11,8 @@ const AllRecipeCard = ({ recipe }) => {
 
     return (
         <div className="border rounded shadow-md p-4">
+        
+
             <img
                 src={Image}
                 className="w-full h-48 object-cover rounded mb-4"

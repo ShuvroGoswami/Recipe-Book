@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const AddRecipes = () => {
   const  {user} = use(AuthContext)
@@ -13,7 +14,7 @@ const AddRecipes = () => {
         console.log(NewRecipes);
 
         // send data to db
-        fetch('http://localhost:3000/recipes', {
+        fetch('https://b11a10-server-side-shuvro-goswami.vercel.app/recipes', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -35,6 +36,9 @@ const AddRecipes = () => {
 
     return (
         <div className='p-20'>
+          <Helmet>
+            <title>Add-recipe</title>
+          </Helmet>
             <div className='p-8'>
                 <h1 className='text-center font-bold text-2xl m-4'>Add recipe</h1>
             <p className='text-center font-bold'>You can add your own recipe here.</p>
@@ -46,38 +50,38 @@ const AddRecipes = () => {
     {/* Title */}
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
       <label className="label">Title</label>
-      <input type="text" name='title' className="input w-full" 
+      <input type="text" name='title' required className="input w-full" 
        placeholder="Title" />
     </fieldset>
 
     {/* Image URL */}
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
       <label className="label">Image</label>
-      <input type="text" name='Image' className="input w-full" placeholder="Image URL" />
+      <input type="text" name='Image' required className="input w-full" placeholder="Image URL" />
     </fieldset>
 
     {/* Ingredients */}
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
       <label className="label">Ingredients</label>
-      <input type="text" name='Ingredients' className="input w-full" placeholder="Ingredients" />
+      <input type="text" name='Ingredients' required className="input w-full" placeholder="Ingredients" />
     </fieldset>
 
     {/* Preparation Time */}
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
       <label className="label">Preparation Time</label>
-      <input type="number" name='Preparation' className="input w-full" placeholder="Preparation Time (minutes)" />
+      <input type="number" name='Preparation' required className="input w-full" placeholder="Preparation Time (minutes)" />
     </fieldset>
 
     {/* Instructions */}
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
       <label className="label">Instructions</label>
-      <input type="text" name='Instructions' className="input w-full" placeholder="Instructions" />
+      <input type="text" name='Instructions' className="input w-full" required placeholder="Instructions" />
     </fieldset>
 
     {/* Cuisine Type Dropdown */}
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
       <label className="label">Cuisine Type</label>
-      <select name="Cuisine" className="select w-full">
+      <select name="Cuisine" required className="select w-full">
         <option value="">-- Select Cuisine --</option>
         <option value="Italian">Italian</option>
         <option value="Mexican">Mexican</option>
@@ -88,11 +92,11 @@ const AddRecipes = () => {
     </fieldset>
 
     {/* Categories Checkboxes */}
-    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4 ">
+    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4  ">
       <label className="label">Categories</label>
       <div className="flex flex-wrap gap-4">
         {['Breakfast', 'Lunch', 'Dinner', 'Dessert', 'Vegan'].map((category) => (
-          <label key={category} className="flex items-center gap-2">
+          <label key={category} required className="flex items-center gap-2">
             <input type="checkbox" name="categories" value={category} className="checkbox checkbox-sm" />
             <span>{category}</span>
           </label>

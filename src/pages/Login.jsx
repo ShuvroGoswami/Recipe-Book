@@ -3,6 +3,7 @@
 import React, { use, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { Link, Links, useLocation, useNavigate } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 // import { Helmet } from 'react-helmet';
 
 const Login = () => {
@@ -45,9 +46,9 @@ const Login = () => {
     return (
         <div className='w-11/12 mx-auto py-5 flex
         justify-center'>
-          {/* <Helmet>
+          <Helmet>
             <title>Login</title>
-          </Helmet> */}
+          </Helmet>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <h2 className='text-2xl font-bold text-center py-3'>Login your account</h2>
       <form onSubmit={handleLogin} className="card-body">

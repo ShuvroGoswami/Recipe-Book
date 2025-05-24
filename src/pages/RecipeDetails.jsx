@@ -1,21 +1,25 @@
 import { useState, useEffect, useContext } from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const RecipeDetails = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const recipe = useLoaderData();
   const [likes, setLikes] = useState(recipe.likeCount || 0);
 
   // Determine if current user is the owner
   const isOwner = user?.email === recipe.email; // ✅ Adjust based on your actual field name
 
+
   // Handle like button click
   const handleLike = async () => {
     if (isOwner) return; // Just in case
 
     try {
-      const res = await fetch(`http://localhost:3000/recipes/${recipe._id}/like`, {
+      const res = await fetch(`https://b11a10-server-side-shuvro-goswami.vercel.app/recipes/${recipe._id}/like`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -34,6 +38,9 @@ const RecipeDetails = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6 rounded shadow">
+      <Helmet>
+        <title>Details Page</title>
+      </Helmet>
       <h1 className="text-3xl font-bold mb-4">{recipe.title}</h1>
       <img className="w-full h-80 object-cover rounded mb-4" src={recipe.Image} alt="" />
       <p><strong>Cuisine:</strong> {recipe.Cuisine}</p>
@@ -54,7 +61,8 @@ const RecipeDetails = () => {
         <p>{recipe.Instructions}</p>
       </div>
 
-      <div className="mt-6 flex items-center gap-4">
+      <div className='flex justify-between'>
+        <div className="mt-6 flex items-center gap-4">
         <button
           onClick={handleLike}
           disabled={isOwner}
@@ -64,6 +72,14 @@ const RecipeDetails = () => {
           👍 Like
         </button>
         <span className="text-lg">{likes} {likes === 1 ? 'Like' : 'Likes'}</span>
+      </div>
+      {/* <button className='btn mt-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded text-white'>Back</button> */}
+      <button
+  onClick={() => navigate(-1)}
+  className='btn mt-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded text-white'
+>
+  Back
+</button>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { use, useContext } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import { ThemeContext } from '../provider/ThemeContext';
+import { CgProfile } from 'react-icons/cg';
 
 const Header = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
@@ -54,7 +55,7 @@ const Header = () => {
     </Link> */}
 
      {
-            user ? (<> <Link to='/profile'>profile</Link>
+            user ? (<> <Link to='/profile'><CgProfile className='btn w-15'></CgProfile></Link>
                             
             </>) : (<><Link to='login' className="btn mr-3 ">Login</Link>
               <Link to="/register" className="btn  ">Register</Link></>)

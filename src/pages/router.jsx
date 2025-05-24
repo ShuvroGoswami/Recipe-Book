@@ -10,22 +10,23 @@ import Login from "./Login";
 import Register from "./Register";
 import Profile from "./Profile";
 import PrivateRoute from "../provider/PrivateRoute";
+import ErrorPage from "./ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: HomeLayout,
-    errorElement: <p>error</p>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
         {
             index: true,
             path: '/',
-            loader:()=> fetch('http://localhost:3000/recipes'),
+            loader:()=> fetch('https://b11a10-server-side-shuvro-goswami.vercel.app/recipes'),
             Component: Home,
         },
         {
             path:'recipesDetails/:id',
-            loader:({params})=>fetch(`http://localhost:3000/recipes/${params.id}`),
+            loader:({params})=>fetch(`https://b11a10-server-side-shuvro-goswami.vercel.app/recipes/${params.id}`),
             // Component: RecipeDetails,
             element: <PrivateRoute>
               <RecipeDetails></RecipeDetails>
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
         },
         {
           path: '/allrecipe',
-           loader:()=> fetch('http://localhost:3000/recipes'),
+           loader:()=> fetch('https://b11a10-server-side-shuvro-goswami.vercel.app/recipes'),
           Component: AllRecipe,
         },
         {
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
         },
         {
           path: '/myrecipes',
-          loader:()=> fetch('http://localhost:3000/recipes'),
+          loader:()=> fetch('https://b11a10-server-side-shuvro-goswami.vercel.app/recipes'),
           // Component: MyRecipes
           element: <PrivateRoute>
             <MyRecipes></MyRecipes>
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'updateRecipe/:id',
-          loader: ({params}) => fetch(`http://localhost:3000/recipes/${params.id}`),
+          loader: ({params}) => fetch(`https://b11a10-server-side-shuvro-goswami.vercel.app/recipes/${params.id}`),
           Component: UpdateRecipe,
         },
         {
