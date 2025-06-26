@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import { useLoaderData } from 'react-router';
 import AllRecipeCard from './AllRecipeCard';
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 
 const AllRecipe = () => {
   const recipes = useLoaderData();
@@ -23,9 +23,9 @@ const AllRecipe = () => {
 
   return (
     <div className='p-10'>
-      <Helmet>
+      {/* <Helmet>
         <title>All-recipes</title>
-      </Helmet>
+      </Helmet> */}
       {/* Cuisine Filter Dropdown */}
       <div className='mb-5'>
         <label htmlFor="cuisine" className='mr-2  font-semibold'>Filter by Cuisine:</label>

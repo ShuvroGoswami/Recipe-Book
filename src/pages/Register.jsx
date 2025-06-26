@@ -3,7 +3,7 @@
 import React, { use, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { Link, useNavigate } from 'react-router';
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 // import { Helmet } from 'react-helmet';
 
 const Register = () => {
@@ -63,11 +63,11 @@ const Register = () => {
     return (
         <div className='w-11/12 mx-auto py-5 flex justify-center'>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                <Helmet>
+                {/* <Helmet>
                     <title>
                         Register
                     </title>
-                </Helmet>
+                </Helmet> */}
                 <h2 className='text-2xl font-bold text-center py-3'>Register your account</h2>
                 <form onSubmit={handleRegister} className="card-body">
                     <fieldset className="fieldset">

@@ -3,7 +3,7 @@
 import React, { use } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 
 const AllRecipeCard = ({ recipe }) => {
     const  {user} = use(AuthContext)

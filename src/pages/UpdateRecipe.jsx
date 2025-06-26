@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
 
@@ -37,9 +37,9 @@ const UpdateRecipe = () => {
 
     return (
         <div className='p-20'>
-          <Helmet>
+          {/* <Helmet>
             <title>Update-recipe</title>
-          </Helmet>
+          </Helmet> */}
             <div className='p-8'>
                 <h1 className='text-center font-bold text-2xl m-4'>Update your recipe</h1>
             <p className='text-center font-bold'>You can update your recipes from here.</p>

@@ -11,6 +11,8 @@ import Register from "./Register";
 import Profile from "./Profile";
 import PrivateRoute from "../provider/PrivateRoute";
 import ErrorPage from "./ErrorPage";
+import DashbordLayout from "../layout/DashboardLayout";
+import Status from "../dashboaed/Status";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +73,21 @@ const router = createBrowserRouter([
               }
     ]
   },
+  {
+    path: 'dashboard',
+    element: <PrivateRoute><DashbordLayout></DashbordLayout></PrivateRoute>,
+    children: [
+      {
+        path: 'profile',
+        Component: Profile
+      },
+      {
+        path: 'status',
+         loader:()=> fetch('https://b11a10-server-side-shuvro-goswami.vercel.app/recipes'),
+        Component: Status,
+      }
+    ]
+  }
 ]);
 
 export default router;

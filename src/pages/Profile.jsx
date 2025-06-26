@@ -1,7 +1,7 @@
 import React, { use } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { Navigate, useNavigate } from 'react-router';
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 // import { Helmet } from 'react-helmet';
 
 const Profile = () => {
@@ -20,10 +20,10 @@ const Profile = () => {
     }); 
   }
     return (
-        <div className='flex flex-col items-center justify-center border bg-gray-800 w-100 p-20 rounded-2xl ml-110 my-10'>
-          <Helmet>
+        <div className='flex flex-col items-center justify-center border bg-gradient-to-r from-orange-200 to-yellow-100 w-100 p-20 rounded-2xl ml-50 my-10'>
+          {/* <Helmet>
             <title>Profile</title>
-          </Helmet>
+          </Helmet> */}
             <div className=''>
             <div className="avatar">
   <div className="ring-primary ring-offset-base-100 w-44 rounded-full ring-2 ring-offset-2 mb-5">
@@ -36,7 +36,7 @@ const Profile = () => {
             </div>
 
             
-            <button onClick={handleLogout} className='btn ml-3 mt-7'>LogOut</button>
+            <button onClick={handleLogout} className='btn btn-primary ml-3 mt-7'>LogOut</button>
             
         </div>
     );

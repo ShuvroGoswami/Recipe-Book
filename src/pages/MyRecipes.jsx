@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import RecipeCard from './RecipeCard';
 import { Link } from 'react-router';
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 
 const MyRecipes = () => {
   const { user, loading } = useContext(AuthContext);
@@ -22,9 +22,9 @@ const MyRecipes = () => {
 
   return (
     <div className="p-10">
-      <Helmet>
+      {/* <Helmet>
         <title>My-recipe</title>
-      </Helmet>
+      </Helmet> */}
       <h2 className="text-xl font-bold mb-4">My Recipes</h2>
       {recipes.length === 0 ? (
         <p>You haven't added any recipes yet. <Link to='/addrecipes' className="text-blue-600">Add Recipe</Link></p>

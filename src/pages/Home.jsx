@@ -6,7 +6,7 @@ import AllRecipeCard from './AllRecipeCard';
 import Hero from '../Component/Hero';
 import TipsSection from '../Component/TipsSection';
 import RealStoriesSection from '../Component/RealStoriesSection ';
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 
 
 
@@ -20,9 +20,9 @@ const Home = () => {
 
     return (
         <div className='w-11/12 mx-auto'>
-            <Helmet>
+            {/* <Helmet>
                 <title>Home</title>
-            </Helmet>
+            </Helmet> */}
             <Hero className='mb-4'></Hero>
             <TipsSection></TipsSection>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-10'>

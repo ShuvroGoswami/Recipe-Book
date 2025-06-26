@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { useLoaderData, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 
 const RecipeDetails = () => {
   const { user } = useContext(AuthContext);
@@ -38,9 +38,9 @@ const RecipeDetails = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6 rounded shadow">
-      <Helmet>
+      {/* <Helmet>
         <title>Details Page</title>
-      </Helmet>
+      </Helmet> */}
       <h1 className="text-3xl font-bold mb-4">{recipe.title}</h1>
       <img className="w-full h-80 object-cover rounded mb-4" src={recipe.Image} alt="" />
       <p><strong>Cuisine:</strong> {recipe.Cuisine}</p>

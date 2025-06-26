@@ -7,24 +7,25 @@ import { CgProfile } from 'react-icons/cg';
 const Header = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
   const  {user, logOut} = use(AuthContext)
-  // const handleLogout =()=>{
-  //   logOut()
-  //   .then(() => {
-  //     alert("you logged out successfully")
-  //   }).catch((error) => {
+  const handleLogout =()=>{
+    logOut()
+    .then(() => {
+      alert("you logged out successfully")
+    }).catch((error) => {
       
-  //     console.log(error);
-  //   }); 
-  // }
+      console.log(error);
+    }); 
+  }
   const link = <>
     <NavLink to="/"  className='mr-3 '>Home</NavLink>
     <NavLink to='/allrecipe' className='mr-3 '>AllRecipe</NavLink>
         <NavLink to="/addrecipes" className='mr-3 '>AddRecipes</NavLink>
         <NavLink to="/myrecipes" className='mr-3 '>MyRecipes</NavLink>
+        <NavLink to="/dashboard/status" className='mr-3 '>Dashboard</NavLink>
 
     </>
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-100 shadow-sm lg:pl-7 lg:pr-7">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -55,7 +56,8 @@ const Header = () => {
     </Link> */}
 
      {
-            user ? (<> <Link to='/profile'><CgProfile className='btn w-15'></CgProfile></Link>
+            user ? (<> 
+            <button onClick={handleLogout} className='btn ml-3 '>LogOut</button>
                             
             </>) : (<><Link to='login' className="btn mr-3 ">Login</Link>
               <Link to="/register" className="btn  ">Register</Link></>)

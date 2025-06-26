@@ -1,7 +1,7 @@
 import React, { use } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 
 const AddRecipes = () => {
   const  {user} = use(AuthContext)
@@ -36,9 +36,9 @@ const AddRecipes = () => {
 
     return (
         <div className='p-20'>
-          <Helmet>
+          {/* <Helmet>
             <title>Add-recipe</title>
-          </Helmet>
+          </Helmet> */}
             <div className='p-8'>
                 <h1 className='text-center font-bold text-2xl m-4'>Add recipe</h1>
             <p className='text-center font-bold'>You can add your own recipe here.</p>
